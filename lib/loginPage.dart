@@ -13,7 +13,6 @@ class MainPage extends StatefulWidget {
 }
 
 class MainPageState extends State<MainPage> {
-  
   Widget backButton(BuildContext context) {
     return InkWell(
       onTap: () {
@@ -45,8 +44,75 @@ class MainPageState extends State<MainPage> {
     );
   }
 
+  Widget emailField() {
+    return Container(
+      height: 80.0,
+      color: Colors.white,
+      child: Center(
+        child: TextField(
+          decoration: InputDecoration(
+            hintText: "Username",
+            prefixIcon: Icon(
+              Icons.account_box,
+              color: Colors.black,
+              size: 30.0,
+            ),
+            border: InputBorder.none,
+          ),
+          style: TextStyle(fontSize: 24.0, color: Colors.black),
+        ),
+      ),
+    );
+  }
+
+  Widget passwordField() {
+    return Container(
+      margin: EdgeInsets.only(top: 15.0),
+      height: 80.0,
+      color: Colors.white,
+      child: Center(
+        child: TextField(
+          obscureText: true,
+          decoration: InputDecoration(
+            hintText: "Password",
+            prefixIcon: Icon(
+              Icons.security,
+              color: Colors.black,
+              size: 30.0,
+            ),
+            border: InputBorder.none,
+          ),
+          style: TextStyle(fontSize: 24.0, color: Colors.black),
+        ),
+      ),
+    );
+  }
+
+  Widget loginButton() {
+    return Container(
+      margin: EdgeInsets.only(top: 15.0),
+      child: ButtonTheme(
+        minWidth: 200.0,
+        height: 70.0,
+        child: RaisedButton(
+          onPressed: () {},
+          color: Colors.red,
+          padding: EdgeInsets.all(10.0),
+          child: Text("Login",
+              style: TextStyle(fontSize: 20.0, color: Colors.white)),
+        ),
+      ),
+    );
+  }
+
   Widget loginBox() {
-    return Text("Login Box");
+    return Container(
+      height: 300.0,
+      margin: EdgeInsets.only(left: 30.0, right: 30.0),
+      child: Column(
+        children: <Widget>[emailField(), passwordField(), loginButton()],
+      ),
+    );
   }
 
   Widget body(BuildContext context) {
