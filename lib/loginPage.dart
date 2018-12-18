@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'utilz.dart';
+import 'syncPage.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -95,7 +96,11 @@ class MainPageState extends State<MainPage> {
         minWidth: 200.0,
         height: 70.0,
         child: RaisedButton(
-          onPressed: () {},
+          onPressed: () {
+
+            Navigator.push(context, MaterialPageRoute(builder: (context) => SyncPage()));
+
+          },
           color: Colors.red,
           padding: EdgeInsets.all(10.0),
           child: Text("Login",
