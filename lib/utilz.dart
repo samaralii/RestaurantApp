@@ -2,6 +2,7 @@ import 'dart:ui';
 
 class Utilz {
 
-  static final APP_BG = const Color(0xFFeee9d6);
+  static const APP_BG = Color(0xFFeee9d6);
+  static const TEXT_COLOR = Color(0xFF694427);
 
 }

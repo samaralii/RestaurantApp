@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'utilz.dart';
-import 'syncPage.dart';
+import 'sync_page.dart';
 
 class LoginPage extends StatelessWidget {
   @override

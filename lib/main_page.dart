@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'utilz.dart';
-import 'loginPage.dart';
+import 'login_page.dart';
+import 'menu_page.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -14,14 +15,17 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
-  Widget startButton() {
-    return Container(
-      width: 190.0,
-      height: 190.0,
-      decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.black),
-      child: Center(
-        child: InkWell(
-          onTap: () => print("pressed"),
+  Widget startButton(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => MenuPage()));
+      },
+      child: Container(
+        width: 190.0,
+        height: 190.0,
+        decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.black),
+        child: Center(
           child: Text("Start",
               style: TextStyle(fontSize: 24.0, color: Colors.white)),
         ),
@@ -72,16 +76,14 @@ class HomePage extends StatelessWidget {
     return Stack(
       children: <Widget>[
         Center(
-          child: startButton(),
+          child: startButton(context),
         ),
         Align(
-          //Bottom|left
-          alignment: Alignment(-1.0, 1.0),
+          alignment: Alignment.bottomLeft,
           child: loginButton(context),
         ),
         Align(
-          //Bottom|right
-          alignment: Alignment(1.0, 1.0),
+          alignment: Alignment.bottomRight,
           child: assignButton(),
         ),
       ],
